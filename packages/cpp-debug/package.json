@@ -32,7 +32,7 @@
     "zlib": "^1.0.5"
   },
   "scripts": {
-    "postinstall": "node ./scripts/download-adapters.js",
+    "postinstall": "# node ./scripts/download-adapters.js",
     "prepare": "yarn run clean && yarn run build",
     "clean": "rimraf lib",
     "build": "tsc",

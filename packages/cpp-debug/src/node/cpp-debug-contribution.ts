@@ -17,11 +17,12 @@
 import { injectable } from 'inversify';
 import { DebugConfiguration } from '@theia/debug/lib/common/debug-common';
 import { AbstractVSCodeDebugAdapterContribution } from '@theia/debug/lib/node/vscode/vscode-debug-adapter-contribution';
-import { join } from 'path';
+import { join, dirname } from 'path';
 import * as Ajv from 'ajv';
 
 const adapterName = 'gdb';
-const adapterPath = join(__dirname, '../../adapters/cdt-gdb-vscode/package');
+// const adapterPath = join(__dirname, '../../adapters/cdt-gdb-vscode/package');
+const adapterPath = dirname(require.resolve('cdt-gdb-vscode/package.json'));
 
 // Load schema from package.json
 const packageJson = require(join(adapterPath, 'package.json'));
